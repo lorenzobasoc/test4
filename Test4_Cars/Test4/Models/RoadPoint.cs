@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Test4.Models
 {
-    class RoadPoint
+    public class RoadPoint
     {
+        public int Id { get; set; }
+        public int Location { get; set; }
+        public DateTime Time { get; set; }
+
+        public int CarId { get; set; }
+        public Car Car { get; set; }
     }
 }

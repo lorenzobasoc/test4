@@ -15,12 +15,11 @@ namespace Test4
 
         public static void Main() {
             Console.WriteLine("GARA DI CORSE DEI PERSONAGGI DI CARS!!");
-            Again:
             Console.WriteLine("Sei in possesso dei permessi per vedere i dati delle auto coperti da privacy?\n - si\n - no");
             privacy = Console.ReadLine();
-            if (privacy != "si" || privacy != "no") {
+            while (privacy != "si" && privacy != "no") {
                 Console.WriteLine("Inserisci un valore corretto.");
-                goto Again;
+                privacy = Console.ReadLine();
             }
             var db = GenerateDb();
             Car.getLastRoadPoint += PrintRoadPoint;
@@ -35,7 +34,6 @@ namespace Test4
             }
 
         }
-
 
         public static void PrintRoadPoint() {
             var lastRoadPoint = GenerateDb().RoadPoints
